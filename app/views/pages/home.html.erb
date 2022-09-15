@@ -1,0 +1,20 @@
+<h1><%= "Welcome API, #{current_user.email}" %>  </h1>
+<p>Congratulations on your registration</p>
+<% if user_signed_in? %>
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+<% else %>
+    <%= link_to "Sign in", new_user_session_path %>
+    <br>
+    <%= link_to "Sign up", new_user_registration_path %>
+<%end%>    
+<p>You can test the API </p>
+
+<div class="container">
+<%= @application.as_json %>
+
+    <ul>
+        <li><%= link_to "web Phone", phones_path %></li>
+        <li><%= link_to "Api v1 Phone", api_v1_phones_path %></li>
+        <li><%= link_to "Api v1 Android Phone", api_v1_android_phones_path %></li></li>
+    </ul>
+</div>
