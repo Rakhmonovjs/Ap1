@@ -1,7 +1,6 @@
 <% if current_user %>
 <h1><%= "Welcome API, #{current_user.email}" %> </h1>
 <p>Congratulations on your registration</p>
-<% if user_signed_in? %>
     <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
 <% else %>
     <%= link_to "Sign in", new_user_session_path %>
@@ -21,4 +20,4 @@
 </div>
 
 
-<%end%>
+
